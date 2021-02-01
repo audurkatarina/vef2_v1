@@ -5,19 +5,21 @@
   </header>
   <main>
     <div class="list">
+      <% categories.forEach((category) => { %>
       <div class="list__row">
-        <% videos.forEach((video) => { %>
+        <h2><%= category.title %></h2>
+        <% category.videos.forEach((video) => { %>
           <div class="list__col">
-            <a href="/<%= video.id %>" class="listItem">
-              <div class="listItem__image <%= !video.poster ? 'listItem__image--empty' : '' %>">
-                <% if (video.poster) { %>
-                  <img src="<%= video.poster %>" alt="">
+            <a href="/<%= videos[video-1].id %>" class="listItem">
+              <div class="listItem__image <%= !videos[video-1].poster ? 'listItem__image--empty' : '' %>">
+                <% if (videos[video-1].poster) { %>
+                  <img src="<%= videos[video-1].poster %>" alt="">
                 <% } %>
               </div>
               <div class="listItem__bottom">
                 <div class="listItem__texts">
                   <h2 class="listItem__title">
-                    <%= video.title %>
+                    <%= videos[video-1].title %>
                   </h2>
                 </div>
               </div>
@@ -25,6 +27,7 @@
           </div>
         <% }) %>
       </div>
+      <% }) %>
     </div>
     <p>&#169; Fræðslumyndbandaleiga</p>
   </main>

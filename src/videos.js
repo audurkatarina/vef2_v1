@@ -42,9 +42,9 @@ async function list(req, res) {
   const title = 'Fræðslumyndbandaleiga';
   const json = await readList();
   const { videos } = json;
-  //const {categories} = json.categories;
+  const {categories} = json;
 
-  res.render('videos', { title, videos });
+  res.render('videos', { title, videos, categories });
 }
 
 /**
