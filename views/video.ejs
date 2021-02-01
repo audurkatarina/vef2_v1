@@ -1,0 +1,22 @@
+<%- include('header') -%>
+
+  <main>
+    <section class="video">
+      <div class="heading">
+        <h2 class="heading__title"><%= video.title %></h2>
+      </div>
+
+      <div class="video__content">
+        <video width="320" height="240" controls>
+            <source src="<%= video.video %>" type="video/mp4">
+        Your browser does not support the video tag.
+        </video>
+      </div>
+
+      <footer class="video__footer">
+        <a class="video__back" href="/">Til baka</a>
+      </footer>
+    </section>
+  </main>
+
+<%- include('footer') -%>

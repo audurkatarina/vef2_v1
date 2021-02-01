@@ -61,7 +61,7 @@ async function video(req, res, next) {
   const json = await readList();
   const { videos } = json;
 
-  const foundVideo = videos.find(a => a.id === id);
+  const foundVideo = videos.find(a => a.id == id);
 
   if (!foundVideo) {
     // sendum í 404 handler
