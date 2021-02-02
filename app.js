@@ -2,7 +2,7 @@ import path from 'path';
 import express from 'express';
 
 import {router} from './src/videos.js';
-//import content from './src/content.js';
+import {created, duration} from './src/help.js';
 
 const app = express();
 
@@ -11,7 +11,8 @@ const viewsPath = new URL('./views', import.meta.url).pathname;
 app.set('views', viewsPath);
 app.set('view engine', 'ejs');
 
-//app.locals.setContent = content;
+app.locals.setCreated = created;
+app.locals.setDuration = duration;
 
 app.use(express.static(new URL('./public', import.meta.url).pathname));
 

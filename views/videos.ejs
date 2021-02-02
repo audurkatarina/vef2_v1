@@ -15,12 +15,16 @@
                 <% if (videos[video-1].poster) { %>
                   <img src="<%= videos[video-1].poster %>" alt="">
                 <% } %>
+                <div>
+                  <%- locals.setDuration(videos[video-1].duration) %>
+              </div>
               </div>
               <div class="listItem__bottom">
                 <div class="listItem__texts">
                   <h2 class="listItem__title">
                     <%= videos[video-1].title %>
                   </h2>
+                  <%- locals.setCreated(videos[video-1].created) %>
                 </div>
               </div>
             </a>

@@ -1,4 +1,3 @@
-
 import util from 'util';
 import fs from 'fs';
 import express from 'express';
@@ -75,5 +74,3 @@ async function video(req, res, next) {
 
 router.get('/', catchErrors(list));
 router.get('/:id', catchErrors(video));
-
-//module.exports = router;
