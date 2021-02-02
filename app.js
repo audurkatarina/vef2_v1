@@ -1,8 +1,8 @@
-import path from 'path';
 import express from 'express';
-
-import {router} from './src/videos.js';
-import {created, duration} from './src/help.js';
+// eslint-disable-next-line import/extensions
+import { router } from './src/videos.js';
+// eslint-disable-next-line import/extensions
+import { created, duration } from './src/help.js';
 
 const app = express();
 
@@ -26,11 +26,11 @@ app.use('/', router);
  * @param {function} next Næsta middleware
  */
 function notFoundHandler(req, res, next) { // eslint-disable-line
-    const title = 'Fannst ekki';
-    const message = 'Ó nei, efnið finnst ekki!';
-    res.status(404).render('error', { title, message });
+  const title = 'Fannst ekki';
+  const message = 'Ó nei, efnið finnst ekki!';
+  res.status(404).render('error', { title, message });
 }
-  
+
 /**
  * Middleware sem sér um villumeðhöndlun.
  *

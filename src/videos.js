@@ -2,6 +2,7 @@ import util from 'util';
 import fs from 'fs';
 import express from 'express';
 
+// eslint-disable-next-line import/prefer-default-export
 export const router = express.Router();
 
 const readFileAsync = util.promisify(fs.readFile);
@@ -38,10 +39,10 @@ async function readList() {
  * @param {object} res Response hlutur
  */
 async function list(req, res) {
-  const title = 'Fræðslumyndbandaleiga';
+  const title = 'Fræðslumyndbandaleigan';
   const json = await readList();
   const { videos } = json;
-  const {categories} = json;
+  const { categories } = json;
 
   res.render('videos', { title, videos, categories });
 }
@@ -60,7 +61,14 @@ async function video(req, res, next) {
   const json = await readList();
   const { videos } = json;
 
-  const foundVideo = videos.find(a => a.id == id);
+  const foundVideo = videos.find((a) => {
+    let found;
+    // eslint-disable-next-line eqeqeq
+    if (a.id == id) {
+      found = a;
+    }
+    return found;
+  });
 
   if (!foundVideo) {
     // sendum í 404 handler
