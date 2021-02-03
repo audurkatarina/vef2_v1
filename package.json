@@ -2,12 +2,13 @@
   "name": "vef2-2021-v1",
   "version": "1.0.0",
   "description": "[Kynning í fyrirlestri](https://youtu.be/pCEHnurbuCU).",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "test": "eslint *.js ./src/**/*.js app.js",
-    "sass": "node-sass styles.scss styles.css",
-    "lint-scss": "stylelint styles.scss --syntax scss",
-    "dev": "nodemon app.js"
+    "test": "eslint ./src/**/*.js app.js",
+    "sass": "node-sass --source-map-embed --recursive ./styles/styles.scss ./public/styles.css",
+    "lint-scss": "stylelint ./styles/*.scss --syntax scss",
+    "dev": "nodemon app.js",
+    "sass-watch": "node-sass --source-map-embed --watch --recursive ./styles/styles.scss ./public/styles.css"
   },
   "repository": {
     "type": "git",
@@ -21,13 +22,13 @@
   "homepage": "https://github.com/audurkatarina/vef2_v1#readme",
   "dependencies": {
     "ejs": "^3.1.5",
-    "express": "^4.17.1",
-    "node-sass": "^5.0.0"
+    "express": "^4.17.1"
   },
   "devDependencies": {
     "eslint": "^7.18.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-plugin-import": "^2.22.1",
+    "node-sass": "^5.0.0",
     "nodemon": "^2.0.7",
     "stylelint": "^13.9.0",
     "stylelint-config-sass-guidelines": "^7.1.0",

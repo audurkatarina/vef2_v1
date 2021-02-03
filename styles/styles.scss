@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  background-color: rgb(211, 211, 211);
+  box-sizing: border-box;
+  font-family: Lora, 'Times New Roman', serif;
+  font-size: 16px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+@import 'header';
+@import 'videos';
+@import 'video';

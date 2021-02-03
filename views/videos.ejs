@@ -1,39 +1,46 @@
 <%- include('header') -%>
 
-  <header class="heading heading--main">
+  <header class="heading">
     <h1 class="heading__title"><%= title %></h1>
   </header>
   <main>
     <div class="list">
       <% categories.forEach((category) => { %>
+        <div class=list__title>
+          <%= category.title %>
+        </div>
       <div class="list__row">
-        <h2><%= category.title %></h2>
         <% category.videos.forEach((video) => { %>
           <div class="list__col">
-            <a href="/<%= videos[video-1].id %>" class="listItem">
-              <div class="listItem__image <%= !videos[video-1].poster ? 'listItem__image--empty' : '' %>">
+            <a href="/<%= videos[video-1].id %>" class="list-item">
+              <div class="list-item__image <%= !videos[video-1].poster ? 'list-item__image--empty' : '' %>">
                 <% if (videos[video-1].poster) { %>
                   <img src="<%= videos[video-1].poster %>" alt="">
                 <% } %>
-                <div>
+                <div class=list-item__duration>
                   <%- locals.setDuration(videos[video-1].duration) %>
+                </div>
               </div>
-              </div>
-              <div class="listItem__bottom">
-                <div class="listItem__texts">
-                  <h2 class="listItem__title">
+              <div class="list-item__bottom">
+                <div class="list-item__texts">
+                  <h2 class="list-item__title">
                     <%= videos[video-1].title %>
                   </h2>
-                  <%- locals.setCreated(videos[video-1].created) %>
+                  <div classs=list-item__text>
+                    <%- locals.setCreated(videos[video-1].created) %>
+                  </div>
                 </div>
               </div>
             </a>
           </div>
         <% }) %>
       </div>
+      <hr class=line>
       <% }) %>
     </div>
-    <p>&#169; <%= title %></p>
   </main>
+  <footer class=footer>
+    <p>&#169; <%= title %></p>
+  </footer>
 
 <%- include('footer') -%>
