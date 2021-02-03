@@ -26,7 +26,7 @@ app.use('/', router);
  * @param {function} next Næsta middleware
  */
 function notFoundHandler(req, res, next) { // eslint-disable-line
-  const title = 'Fannst ekki';
+  const title = 'Síða fannst ekki';
   const message = 'Ó nei, efnið finnst ekki!';
   res.status(404).render('error', { title, message });
 }

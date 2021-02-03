@@ -4,11 +4,12 @@
   "description": "[Kynning í fyrirlestri](https://youtu.be/pCEHnurbuCU).",
   "main": "app.js",
   "scripts": {
-    "test": "eslint ./src/**/*.js app.js",
+    "eslint": "eslint ./src/**/*.js app.js",
     "sass": "node-sass --source-map-embed --recursive ./styles/styles.scss ./public/styles.css",
     "lint-scss": "stylelint ./styles/*.scss --syntax scss",
-    "dev": "nodemon app.js",
-    "sass-watch": "node-sass --source-map-embed --watch --recursive ./styles/styles.scss ./public/styles.css"
+    "start": "nodemon app.js",
+    "sass-watch": "node-sass --source-map-embed --watch --recursive ./styles/styles.scss ./public/styles.css",
+    "test": "concurrently npm:lint-scss npm:eslint"
   },
   "repository": {
     "type": "git",
@@ -25,6 +26,7 @@
     "express": "^4.17.1"
   },
   "devDependencies": {
+    "concurrently": "^5.3.0",
     "eslint": "^7.18.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-plugin-import": "^2.22.1",
