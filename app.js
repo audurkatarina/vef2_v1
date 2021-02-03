@@ -40,6 +40,7 @@ function notFoundHandler(req, res, next) { // eslint-disable-line
  * @param {function} next Næsta middleware
  */
 function errorHandler(err, req, res, next) { // eslint-disable-line
+  // eslint-disable-next-line no-console
   console.error(err);
   const title = 'Villa kom upp';
   const message = '';
@@ -53,5 +54,6 @@ const hostname = '127.0.0.1';
 const port = 3000;
 
 app.listen(port, hostname, () => {
+  // eslint-disable-next-line no-console
   console.info(`Server running at http://${hostname}:${port}/`);
 });
